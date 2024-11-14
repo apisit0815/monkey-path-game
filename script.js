@@ -50,3 +50,19 @@ function checkReward(x, y) {
 
     document.getElementById('score').textContent = score;
 }
+
+function resetGame() {
+    // Reset position and score
+    const oldCell = document.getElementById(`cell-${monkeyPosition[0]}-${monkeyPosition[1]}`);
+    oldCell.textContent = '';
+
+    monkeyPosition = [0, 0];
+    score = 0;
+
+    // Set monkey back to starting position
+    const startCell = document.getElementById(`cell-0-0`);
+    startCell.textContent = '🐵';
+
+    // Update score display
+    document.getElementById('score').textContent = score;
+}
