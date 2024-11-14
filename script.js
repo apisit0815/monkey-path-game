@@ -46,8 +46,6 @@ function checkReward(x, y) {
     } else if (tile === '🐜') {
         score -= 1;
         alert('You encountered an ant! -1 point!');
-    } else if (tile === '👶') {
-        alert('You reached your child! Goal achieved!');
     }
 
     document.getElementById('score').textContent = score;
