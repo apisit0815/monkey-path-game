@@ -27,7 +27,7 @@ function move(direction) {
 function updatePosition(newX, newY) {
     // Clear old position
     const oldCell = document.getElementById(`cell-${monkeyPosition[0]}-${monkeyPosition[1]}`);
-    oldCell.textContent = '';
+    if (oldCell) oldCell.textContent = '';
 
     // Update position
     monkeyPosition = [newX, newY];
@@ -52,10 +52,13 @@ function checkReward(x, y) {
 }
 
 function resetGame() {
-    // Reset position and score
-    const oldCell = document.getElementById(`cell-${monkeyPosition[0]}-${monkeyPosition[1]}`);
-    oldCell.textContent = '';
+    // Clear all cells
+    const cells = document.getElementsByClassName('cell');
+    for (let cell of cells) {
+        cell.textContent = '';
+    }
 
+    // Reset position and score
     monkeyPosition = [0, 0];
     score = 0;
 
