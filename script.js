@@ -41,10 +41,10 @@ function checkReward(x, y) {
     const tile = document.getElementById(`cell-${x}-${y}`).textContent;
 
     if (tile === '🍌') {
-        score += 1;
+        score += 1;  // Score +1 for finding a banana
         alert('You found a banana! +1 point!');
     } else if (tile === '🐜') {
-        score -= 1;
+        score -= 1;  // Score -1 for encountering an ant
         alert('You encountered an ant! -1 point!');
     }
 
